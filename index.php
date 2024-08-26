@@ -80,3 +80,21 @@ create function
 function cron{
 //write your logic
 }
+
+// setup a cron using Supervisor
+// in etc/supervisor/conf.d/
+// create a file laravel-scheduler.conf
+[program:laravel-scheduler]
+command=/bin/bash -c "while true; do php /var/www/development.shrinkcom.com/pills-reminder/artisan schedule:run; sleep 10; done"
+directory=/var/www/development.shrinkcom.com/pills-reminder/
+user=www-data
+autostart=true
+autorestart=true
+startsecs=0
+stderr_logfile=/var/www/development.shrinkcom.com/pills-reminder/storage/logs/scheduler.err.log
+stdout_logfile=/var/www/development.shrinkcom.com/pills-reminder/storage/logs/scheduler.out.log
+
+
+    
+// or run this in your terminal to test
+php artisan notifications:send
