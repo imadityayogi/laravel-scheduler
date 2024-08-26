@@ -1,8 +1,7 @@
 follow these steps
 
-//in pills-reminder/app/Console/Commands/
-create a file
-//SendNotifications.php
+// in pills-reminder/app/Console/Commands/
+// create a file SendNotifications.php
 <?php
 
 namespace App\Console\Commands;
@@ -38,7 +37,7 @@ class SendNotifications extends Command
 }
 
 
-//in pills-reminder/app/Console/Kernel.php
+// in pills-reminder/app/Console/Kernel.php
 <?php
 
 namespace App\Console;
@@ -75,10 +74,10 @@ class Kernel extends ConsoleKernel
     }
 }
 
-// in ApplicationController//
-create function
+// in ApplicationController/
+// create function
 function cron{
-//write your logic
+    //write your logic
 }
 
 // setup a cron using Supervisor
